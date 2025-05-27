@@ -1,0 +1,11 @@
+Build step - Excute window batch command 
+
+@echo off
+REM Define the source and destination paths
+set SRC="C:\Users\Sahil Shende\Desktop"
+set DEST="C:\my-webs"
+REM Ensure the destination directory exists
+if not exist %DEST% mkdir %DEST%
+REM Use the full path to xcopy
+C:\Windows\System32\xcopy.exe /Y %SRC% %DEST% || exit /b 1
+echo File copied successfully.
